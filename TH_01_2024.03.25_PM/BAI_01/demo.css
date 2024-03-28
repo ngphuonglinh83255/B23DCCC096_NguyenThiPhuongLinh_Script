@@ -1,0 +1,72 @@
+html, body {
+   
+}
+
+.box {
+    width: 1200px;
+    height: 980px;
+    margin: auto;
+}
+.tb1 {
+    border: 1px solid #ccc;
+    width: 1144px;
+    height: 30px;
+    background-color: rgb(46, 126, 163);
+}
+.tb1 a {
+    text-decoration: none;
+    color: #ccc;
+}
+.tb2 {
+    border: 1px solid #ccc;
+    width: 1144px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(229, 234, 234);
+}
+.tb2-1 {
+    display: flex;
+}
+.anh {
+    display: flex;
+}
+.anh1 {
+    width: 200px;
+    height: 740px;
+    border: 1px solid #ccc;
+}
+.anh1-1 a {
+    text-decoration: none;
+}
+.anh2 {
+    width: 740px;
+    height: 470px;
+    border: 1px solid #ccc;
+    display: flex;
+}
+.anh2-1 {
+    width: 400px;
+}
+.anh2-4 {
+    width: 740px;
+    height: 310px;
+    border: 1px solid #ccc;
+}
+.tintuc {
+    background-color: #ccc;
+}
+.zent {
+    display: flex;
+    width: 400px;
+}
+.para {
+    width: 400px;
+}
+.flex {
+    display: flex;
+}
+.anhr3 {
+    width: 200px;
+    height: 975px;
+    border: 1px solid #ccc;
+}
