@@ -1,0 +1,37 @@
+html, body {
+    margin: 0;
+}
+.box {
+    width: 800px;
+    background-color: rgb(200, 211, 222);
+    display: flex;
+    margin: auto;
+    margin: 400px auto;
+    justify-content: space-between;
+    
+}
+
+.box1-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box1-1 img {
+    width: 20px;
+    height: 20px;
+}
+.box1-2 {
+    display: flex;
+}
+.box1-2 a {
+    text-decoration: none;
+}
+.box1-2 img {
+    width: 40px;
+    height: 40px;
+}
+.box2 { 
+    display: flex;
+    justify-content: space-between;
+}
+
