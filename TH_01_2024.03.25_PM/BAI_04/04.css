@@ -1,37 +1,106 @@
 html, body {
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
 }
 .box {
-    width: 800px;
-    background-color: rgb(200, 211, 222);
-    display: flex;
     margin: auto;
-    margin: 400px auto;
-    justify-content: space-between;
+    margin-top: 320px;
+    width: 850px;
+    height: 130px;
+    background-color: #e8e6e6; 
+    padding-top: 5px;
+    padding-right: 5px;
     
 }
-
-.box1-1 {
+.box1 {
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
-.box1-1 img {
+.box1 ul {
+
+}
+.feature li {
+    list-style: none;
+    display: inline-block;
+}
+.feature a {
+    text-decoration: none;
+}
+.feature2 li {
+    list-style: none;
+
+}
+.feature2 h4 {
+    margin: 0 auto;
+}
+.feature2 p {
+    margin: 0 auto;
+}
+.feature2 button {
+    width: 165px;
+    border-radius: 13px;
+    border: none;
+    border: 1px solid #333;
+    background-color: #ccccca;
+
+} 
+
+.top:hover {
+    color: red;
+    cursor: pointer;
+}
+.bottom a:hover {
+    color: #47bae4;
+    text-decoration: underline;
+}
+.top {
+    display: flex;
+    margin-left: 10px;
+}
+.top span {
+    margin-left: 20px;
+}
+.top img {
     width: 20px;
     height: 20px;
 }
-.box1-2 {
+.top1 {
+    margin-top: 0;
+}
+.bottom {
     display: flex;
+    margin-top: 20px;
 }
-.box1-2 a {
-    text-decoration: none;
+.bottom span {
+    line-height: 60px;
 }
-.box1-2 img {
-    width: 40px;
-    height: 40px;
+.bottom img {
+    width: 50px;
+    height: 55px;
 }
-.box2 { 
+.bottom a {
+    color: #333;
+}
+.emoji {
     display: flex;
-    justify-content: space-between;
+    cursor: pointer;
+}
+.emoji img {
+    width: 20px;
+    margin-top: 5px;
+}
+button:hover {
+    opacity: 0.8;
+}
+.emoji:hover {
+    color: #102be0;
+}
+.emoji2 {
+    margin-left: 4px;
+    text-align: left;
+}
+.emo1 {
+    color: #3b38be;
 }
 
