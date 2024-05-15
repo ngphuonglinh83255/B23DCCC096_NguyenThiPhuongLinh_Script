@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chức năng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>chức năng mảng</h1>
+    <button onclick="generateArray()">Tạo mảng ngẫu nhiên</button>
+    <div id="result"></div>
+
+    <script>
+        function generateRandomArray(size, minValue, maxValue) {
+            const array = [];
+            for (let i = 0; i < size; i++) {
+                array.push(Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue);
+            }
+            return array;
+        }
+
+        function findMax(arr) {
+            return Math.max(...arr);
+        }
+
+        function isPerfectSquare(num) {
+            return Math.sqrt(num) % 1 === 0;
+        }
+
+        function findPerfectSquares(arr) {
+            return arr.filter(num => isPerfectSquare(num));
+        }
+
+        function calculateAverage(arr) {
+            const nonNegativeNumbers = arr.filter(num => num >= 0);
+            const sum = nonNegativeNumbers.reduce((total, num) => total + num, 0);
+            return sum / nonNegativeNumbers.length;
+        }
+
+        function findNumbersGreaterThanAverage(arr) {
+            const average = calculateAverage(arr);
+            return arr.filter(num => num > average);
+        }
+
+        function generateArray() {
+            const randomArray = generateRandomArray(10, 1, 100);
+            const maxNumber = findMax(randomArray);
+            const perfectSquares = findPerfectSquares(randomArray);
+            const numbersGreaterThanAverage = findNumbersGreaterThanAverage(randomArray);
+            const average = calculateAverage(randomArray);
+
+            document.getElementById('result').innerHTML = `
+                <p>Mảng ngẫu nhiên: ${randomArray.join(', ')}</p>
+                <p>Số lớn nhất trong mảng: ${maxNumber}</p>
+                <p>Các số chính phương trong mảng: ${perfectSquares.join(', ')}</p>
+                <p>Các số lớn hơn trung bình cộng của mảng: ${numbersGreaterThanAverage.join(', ')}</p>
+                <p>Trung bình cộng của các số không âm trong mảng: ${average}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

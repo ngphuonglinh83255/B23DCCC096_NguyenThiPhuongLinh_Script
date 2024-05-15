@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thao tác Mảng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #dfebef;
+            color: #333;
+        }
+        #container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fbfbfb;
+            border-radius: 8px;
+           
+        }
+        h1 {
+            text-align: center;
+            color: #555;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #2e3c4d;
+            color: #fff;
+          
+          
+         
+        
+       }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Thao tác Mảng</h1>
+        <button onclick="generateArray()">Tạo Mảng Ngẫu Nhiên</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function generateRandomArray(size, minValue, maxValue) {
+            const array = [];
+            for (let i = 0; i < size; i++) {
+                array.push(Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue);
+            }
+            return array;
+        }
+
+        function sortArray(arr) {
+            return arr.slice().sort((a, b) => a - b);
+        }
+
+        function removeDuplicates(arr) {
+            return Array.from(new Set(arr));
+        }
+
+        function generateArray() {
+            const randomArray = generateRandomArray(10, 1, 100);
+            const sortedArray = sortArray(randomArray);
+            const uniqueArray = removeDuplicates(randomArray);
+            const sortedUniqueArray = sortArray(uniqueArray);
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+
+            addResultItem(resultDiv, 'Mảng Ngẫu Nhiên', randomArray.join(', '));
+            addResultItem(resultDiv, 'Mảng Đã Sắp Xếp', sortedArray.join(', '));
+            addResultItem(resultDiv, 'Mảng Không Có Phần Tử Trùng', uniqueArray.join(', '));
+            addResultItem(resultDiv, 'Mảng Đã Sắp Xếp và Không Có Phần Tử Trùng', sortedUniqueArray.join(', '));
+        }
+
+        function addResultItem(parentElement, title, content) {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('result-item');
+
+            const titleElement = document.createElement('h3');
+            titleElement.textContent = title;
+
+            const contentElement = document.createElement('p');
+            contentElement.textContent = content;
+
+            itemDiv.appendChild(titleElement);
+            itemDiv.appendChild(contentElement);
+            parentElement.appendChild(itemDiv);
+        }
+    </script>
+</body>
+</html>
