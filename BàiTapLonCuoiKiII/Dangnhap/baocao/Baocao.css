@@ -147,30 +147,33 @@ body {
 .sidebar ul li a i {
     margin-right: 10px;
 }
+
 .container {
     width: 1100px;
     margin: 0 auto;
     padding: 5px;
-    background-color: #ffffff; 
-    
+    background-color: #ffffff;
 }
-header2{  
+
+header2 {
     font-size: 12px;
-  
 }
-.box2{
-    margin-bottom:10px;
-    
+
+.box2 {
+    margin-bottom: 10px;
 }
-.box{
-    display:flex;
+
+.box {
+    display: flex;
 }
-.cl1{
-    width:35%;
+
+.cl1 {
+    width: 35%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .filters {
-    padding:1px;
+    padding: 1px;
     justify-content: space-between;
     margin-bottom: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -179,16 +182,16 @@ header2{
 .filters select {
     padding: 5px;
     font-size: 16px;
-    background:#bad0e7;
-    
+    background: #bad0e7;
 }
-h2{
-    font-size: 18px;
-    margin-bottom:2px;
-    margin-top:2px;
-}
-.charts {
 
+h2 {
+    font-size: 18px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.charts {
     margin-bottom: 10px;
 }
 
@@ -198,13 +201,12 @@ h2{
 }
 
 .task-table {
-    margin-left:20px;
-    width:700px;
+    margin-left: 20px;
+    width: 700px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .task-table table {
-   
     border-collapse: collapse;
 }
 
@@ -217,36 +219,41 @@ h2{
 .task-table th {
     background-color: #f2f2f2;
 }
-.tasks-by-days{
-    margin-top:10px;
-    padding:5px;
+
+.tasks-by-days {
+    margin-top: 10px;
+    padding: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.task-status{
+
+.task-status {
     display: flex;
     align-items: center;
-    margin-top:20px;
-    width:100%;
+    margin-top: 20px;
+    width: 100%;
 }
-.status{ 
+
+.status {
     display: flex;
     align-items: center;
-    margin:5px;
+    margin: 5px;
+    justify-content: space-between;
 }
-.task-status canvas{
-    justify-content: center;
-    width:50%;
-    align-items: center;
-}
-.box3{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 50%;
-}
+
 .status-bar {
-    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
 }
+
+.box3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
 .search-container {
     margin-bottom: 5px;
 }
@@ -267,7 +274,6 @@ h2{
     color: white;
     border: none;
     border-radius: 2px;
-    
 }
 
 .search-container button:hover {
