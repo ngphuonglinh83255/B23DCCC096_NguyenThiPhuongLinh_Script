@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="caidat1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Settings</h1>
+        
+        <div class="profile">
+            <h2>Profile</h2>
+            <div class="avatar">
+                <img src="https://i.pinimg.com/736x/63/50/38/635038fc44faa6546510702e43f825c3.jpg" alt="Avatar">
+            </div>
+            <p><strong>Username:</strong> Leen</p>
+            <p><strong>Email:</strong> example@example.com</p>
+            <button id="edit-profile-btn">Edit Profile</button>
+        </div>
+        
+        <div class="app-settings">
+            <div class="container1">
+          
+        
+                <div class="section">
+                    <h2>Cài Đặt Chung</h2>
+                    <div class="form-group">
+                        <label for="site-title">Tiêu Đề Trang</label>
+                        <input type="text" id="site-title" name="site-title" placeholder="Nhập tiêu đề trang">
+                    </div>
+                    <div class="form-group">
+                        <label for="language">Ngôn Ngữ</label>
+                        <select id="language" name="language">
+                            <option value="en">Tiếng Anh</option>
+                            <option value="es">Tiếng Tây Ban Nha</option>
+                            <option value="fr">Tiếng Pháp</option>
+                            <option value="de">Tiếng Đức</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dark-mode">Chế Độ Tối</label>
+                        <input type="checkbox" id="dark-mode" name="dark-mode" onclick="toggleDarkMode()"> Bật chế độ tối
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <h3>Cài Đặt Người Dùng</h3>
+                    <div class="form-group">
+                        <label for="username">Tên Người Dùng</label>
+                        <input type="text" id="username" name="username" placeholder="Nhập tên người dùng">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Nhập email">
+                    </div>
+                    <div class="form-group">
+                        <label for="current-password">Mật Khẩu Hiện Tại</label>
+                        <input type="password" id="current-password" name="current-password" placeholder="Nhập mật khẩu hiện tại">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Mật Khẩu Mới</label>
+                        <input type="password" id="new-password" name="new-password" placeholder="Nhập mật khẩu mới">
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <h2>Cài Đặt Thông Báo</h2>
+                    <div class="form-group">
+                        <label for="email-notifications">Thông Báo Qua Email</label>
+                        <input type="checkbox" id="email-notifications" name="email-notifications"> Bật thông báo qua email
+                    </div>
+                    <div class="form-group">
+                        <label for="sms-notifications">Thông Báo Qua SMS</label>
+                        <input type="checkbox" id="sms-notifications" name="sms-notifications"> Bật thông báo qua SMS
+                    </div>
+                </div>
+        
+                <div class="form-actions">
+                    <button type="submit">Lưu Cài Đặt</button>
+                </div>
+            </div>
+            <div class="back-button">
+                <button id="back-btn">Quay lại</button>
+            </div>
+    </div>
+    <script src="caidat1.js"></script>
+</body>
+</html>

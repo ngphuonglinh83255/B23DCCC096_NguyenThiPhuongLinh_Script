@@ -1,0 +1,199 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.profile, .app-settings {
+  margin-bottom: 20px;
+}
+
+.profile h2, .app-settings h2 {
+  color: #555;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.setting {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+input[type="checkbox"], select {
+  margin-top: 5px;
+}
+
+.logout {
+  text-align: center;
+}
+
+#logout-btn {
+  color: #c0392b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#logout-btn:hover {
+  text-decoration: underline;
+}
+/*.............*/
+.container1 {
+
+  max-width: 800px;
+  margin: 1px auto;
+  background-color: #fff;
+
+  border-radius: 10px;
+}
+h1 {
+  text-align: center;
+  color: #4c587d;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  border-bottom: 2px solid #e2e2e2;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #666;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select,
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group select:focus,
+.form-group input[type="file"]:focus {
+  border-color: #b3c1dc;
+  outline: none;
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.form-actions button {
+  padding: 12px 20px;
+  background-color: #4c587d;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.form-actions button:hover {
+  background-color: #4c587d;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #181818;
+  color: #e0e0e0;
+}
+
+/* CSS cho chế độ tối */
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .container {
+  background-color: #444;
+}
+
+.dark-mode h1 {
+  color: #fff;
+}
+
+.dark-mode .profile {
+  background-color: #555;
+  color: #fff;
+}
+
+.dark-mode .section {
+  background-color: #666;
+  color: #fff;
+}
+
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="password"],
+.dark-mode select {
+  background-color: #777;
+  color: #fff;
+}
+
+.dark-mode button[type="submit"] {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #fff;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự án</title>
+    <link rel="stylesheet" href="duan.css">
+    <script src="duan.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Thêm liên kết tới Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <input type="text" id="search-header" placeholder="Search...">
+        <div class="account">
+            <img id="avatar" src="https://i.pinimg.com/736x/63/50/38/635038fc44faa6546510702e43f825c3.jpg" alt="Avatar">
+            <span id="username">Leen</span>
+            <div class="account-options" id="account-options">
+                <a href="http://127.0.0.1:5500/Dangnhap/hoso/hoso.html">Profile</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/caidat/caidat1.html">Settings</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/Tongquan/dangnhap/Dangnhap.html">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="sidebar">
+            <div class="sidebar-buttons">
+                <button data-url="http://127.0.0.1:5500/Dangnhap/trangchu/congviec.html"><i class="fas fa-tasks"></i> Công Việc</button>
+                <button data-url="hhttp://127.0.0.1:5500/Dangnhap/duan/duan.html"><i class="fas fa-cog"></i> DS Dự án</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/nhiemvu/canhan.html"><i class="fas fa-user"></i> Cá Nhân</button>  
+                <button data-url="https://example.com/cong-viec"><i class="fas fa-flag"></i> Báo cáo</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/lich/lich.html"><i class="fas fa-calendar-alt"></i> Lịch</button>
+            </div>
+            <hr>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/trangchu/kehoach.html"> Kế hoạch</a></li>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/s%E1%BB%B1%20ki%E1%BB%87n/sukien.html"> Sự kiện</a></li>
+                <li><a href="#">Khác</a></li>
+            </ul>
+            <hr>
+
+        </div>
+        <div class="content">
+            <div class="project-list-header">
+                <div class="title">Danh sách dự án</div>
+                <div class="actions">
+                    <button> Thêm </button>
+                    <button>Ngày cập nhật</button>
+                    <button>Dự án</button>
+                    <button>Tiện ích</button>
+                </div>
+            </div>
+            <div class="box">
+                <div class="overview">
+                    <div class="chart-container">
+                        <canvas id="overallChart"></canvas>
+                    </div>
+                    <div class="status-container">
+                        <div class="status">
+                            <span>Kế hoạch</span>
+                            <div class="status-value">
+                                <div class="status-bar" style="background-color: #cde6f7; width: 15px; height: 15px;"></div>
+                                <span> 20%</span>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <span>Đang làm</span>
+                            <div class="status-value">
+                                <div class="status-bar" style="background-color: #1abc9c; width: 15px; height: 15px;"></div>
+                                <span>30%</span>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <span>Tạm dừng</span>
+                            <div class="status-value">
+                                <div class="status-bar" style="background-color: #375dc4; width: 15px; height: 15px;"></div>
+                                <span>15%</span>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <span>Hoàn thành</span>
+                            <div class="status-value">
+                                <div class="status-bar" style="background-color: #5b92db; width: 15px; height: 15px;"></div>
+                                <span>35%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="overview2">
+                    <div class="chart-container2">
+                        <canvas id="overallChart2"></canvas>
+                    </div>
+                    <div class="status-container">
+                        <div class="status">
+                            <span>Chậm</span>
+                            <div class="status-value">
+                                <div class="status-bar" style="background-color: #73af96; width: 15px; height: 15px;"></div>
+                                <span> 10%</span>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <span>Nhanh</span>
+                            <div class="status-value">
+                                <div class="status-bar" style="background-color: #abfad9; width: 15px; height: 15px;"></div>
+                                <span>25%</span>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <span>Ổn định</span>
+                            <div class="status-value">
+                                <div class="status-bar" style="background-color: #6acaba; width: 15px; height: 15px;"></div>
+                                <span>%30</span>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <span>Bình thường</span>
+                            <div class="status-value">
+                                <div class="status-bar" style="background-color: #a2dfd1; width: 15px; height: 15px;"></div>
+                                <span>35%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                
+            </div>
+        
+            <div class="box2">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Công việc 1</h2>
+                        <span>Mã dự án: 01 | Ngày tạo: 05/06/2024 | Ngày kết thúc: 12/8/2024</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress progress-red" style="width: 31%;"></div>
+                    </div>
+                    <div>KPI tiến độ: <span style="color: red;">31% - Tiến độ quá chậm, cần kiểm tra</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2> Công việc 2</h2>
+                        <span>Mã dự án: 02 | Ngày bắt đầu: 13/6/2024| Ngày kết thúc: 12/9/2024</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress progress-blue" style="width: 80%;"></div>
+                    </div>
+                    <div>KPI tiến độ: <span style="color: rgb(255, 0, 0);">80% - Tiến độ nhanh</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2> Công việc 3</h2>
+                        <span>Mã dự án: 03 | Ngày bắt đầu: 01/7/2024| Ngày kết thúc: 12/10/2024</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress progress-blue" style="width: 50%;"></div>
+                    </div>
+                    <div>KPI tiến độ: <span style="color: rgb(255, 0, 0);">50% - Tiến độ ổn định</span></div>
+                </div>
+            </div>
+        </div>   
+        
+    </div>
+    
+</body>
+</html>

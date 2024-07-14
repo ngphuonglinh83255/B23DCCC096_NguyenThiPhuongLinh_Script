@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="Dangki.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng Ký</h2>
+        <form id="registrationForm" action="process_registration.php" method="POST">
+            <div class="form-group">
+                <label for="hovaten">Họ Và Tên(<span style="color:red">*</span>)</label>
+                <input type="text" name="hovaten" required class="input1"/>
+            </div>
+            <div class="form-group">
+                <label for="username">Tên đăng nhập(<span style="color:red">*</span>)</label>
+                <input type="text" id="username" name="username" required class="input1"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu(<span style="color:red">*</span>)</label>
+                <input type="password" id="password" name="password" required class="input1"/>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Xác nhận mật khẩu(<span style="color:red">*</span>)</label>
+                <input type="password" id="confirm_password" name="confirm_password" required class="input1"/>
+            </div>
+            <div class="form-group">
+                <span id="error-message" style="color:red; display:none;">Mật khẩu không khớp! </span>
+            </div>
+            <div class="input">
+                <label for="gioitinh">Giới Tính: </label>
+                <span style="color:black; margin-left:10px;"></span>
+                 <input type="radio" name="gioitinh" value="1" checked="checked" style="margin-left: 30px;margin-right: 5px;">Nam
+                  <input type="radio" name="gioitinh" value="0" style="margin-left: 30px;margin-right: 5px;">Nữ
+            </div>
+            <div class="form-group">
+                <label for="diachi">Địa Chỉ</label>
+                <input type="text" id="diachi" name="diachi" class="input1"/>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="input1"/>
+            </div>
+            <div class="input">
+                <span style="color:black; margin-left:10px;"></span>
+            </div>
+            <div class="input">
+                <label for="xacnhan_dieukhoan">Bạn có đồng ý với điều khoản không?</label>
+                <span style="color:black; margin-left:10px;"></span>
+                 <input type="checkbox" name="xacnhan_dieukhoan" value="1" style="margin-left: 30px;margin-right: 5px;">Có
+            </div>
+            <div class="input">
+                <label for="xacnhan">Bạn có phải là người máy không?</label>
+                <span style="color:black; margin-left:10px;"></span>
+                 <input type="radio" name="xacnhan" value="1" checked="checked" style="margin-left: 30px;margin-right: 5px;">Có
+                  <input type="radio" name="xacnhan" value="0" style="margin-left: 30px;margin-right: 5px;">Không
+            </div>
+            <button type="submit">Đăng Ký</button>
+        </form>
+    </div>
+    <script src="Dangki.js"></script>
+</body>
+</html>

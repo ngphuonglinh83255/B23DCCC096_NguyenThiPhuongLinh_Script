@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện</title>
+    <link rel="stylesheet" href="sukien.css">
+    <!-- Thêm liên kết tới Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <input type="text" id="search-header" placeholder="Search...">
+        <div class="account">
+            <img id="avatar" src="https://i.pinimg.com/736x/63/50/38/635038fc44faa6546510702e43f825c3.jpg" alt="Avatar">
+            <span id="username">Leen</span>
+            <div class="account-options" id="account-options">
+                <a href="http://127.0.0.1:5500/Dangnhap/hoso/hoso.html">Hồ sơ</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/caidat/caidat1.html">Cài đặt</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/Tongquan/dangnhap/Dangnhap.html">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-buttons">
+                <button data-url="http://127.0.0.1:5500/Dangnhap/trangchu/congviec.html"><i class="fas fa-tasks"></i> Công Việc</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/duan/duan.html"><i class="fas fa-cog"></i> DS Dự án</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/nhiemvu/canhan.html"><i class="fas fa-user"></i> Cá Nhân</button>  
+                <button data-url="https://example.com/cong-viec"><i class="fas fa-flag"></i> Báo cáo</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/lich/lich.html"><i class="fas fa-calendar-alt"></i> Lịch</button>
+            </div>
+            <hr>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/trangchu/kehoach.html"> Kế hoạch</a></li>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/s%E1%BB%B1%20ki%E1%BB%87n/sukien.html"> Sự kiện</a></li>
+                <li><a href="#">Khác</a></li>
+            </ul>
+            <hr>
+        </div>
+        
+        <div class="content">
+            <main>
+                <section id="events">
+                    <article class="event">
+                        <img src="https://i.pinimg.com/736x/6a/b2/ca/6ab2caf62dc9b7cdb3754c28692ff90b.jpg" alt="Event Image">
+                        <div class="event-info">
+                            <h2>Sự kiện A</h2>
+                            <p><strong>Thời gian:</strong> 12:00 PM - 3:00 PM</p>
+                            <p><strong>Địa điểm:</strong> Nhà hát thành phố</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae enim varius, posuere mi sed, lacinia risus.</p>
+                            <a href="#" class="btn">Đăng ký</a>
+                        </div>
+                    </article>
+                    <article class="event">
+                        <img src="https://i.pinimg.com/564x/2d/2d/7d/2d2d7dd804fcb6796c490972bfea318f.jpg" alt="Event Image">
+                        <div class="event-info">
+                            <h2>Sự kiện B</h2>
+                            <p><strong>Thời gian:</strong> 3:00 PM - 5:00 PM</p>
+                            <p><strong>Địa điểm:</strong> Trung tâm hội nghị quốc gia</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae enim varius, posuere mi sed, lacinia risus.</p>
+                            <a href="#" class="btn">Đăng ký</a>
+                        </div>
+                    </article>
+                    <article class="event">
+                        <img src="https://i.pinimg.com/564x/99/d3/c9/99d3c99e6435bcbdc384afaafdaf3d22.jpg" alt="Event Image">
+                        <div class="event-info">
+                            <h2>Sự kiện C</h2>
+                            <p><strong>Thời gian:</strong> 6:00 PM - 9:00 PM</p>
+                            <p><strong>Địa điểm:</strong> Công viên thành phố</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae enim varius, posuere mi sed, lacinia risus.</p>
+                            <a href="#" class="btn">Đăng ký</a>
+                        </div>
+                    </article>
+                </section>
+        
+                <section id="event-details" style="display: none;">
+                    <h2>Chi tiết sự kiện</h2>
+                    <div id="event-detail-info">
+                        <!-- Nội dung chi tiết sự kiện sẽ được cập nhật bằng JavaScript -->
+                    </div>
+                </section>
+            </main>
+            <!-- Nội dung của trang nằm ở đây -->
+        </div>
+    </div>
+    <script src="sukien.js"></script>
+</body>
+</html>

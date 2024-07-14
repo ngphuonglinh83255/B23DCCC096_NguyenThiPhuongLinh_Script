@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch</title>
+    <link rel="stylesheet" href="lich.css">
+    <!-- Thêm liên kết tới Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <input type="text" id="search-header" placeholder="Search...">
+        <div class="account">
+            <img id="avatar" src="https://i.pinimg.com/736x/63/50/38/635038fc44faa6546510702e43f825c3.jpg" alt="Avatar">
+            <span id="username">Leen</span>
+            <div class="account-options" id="account-options">
+                <a href="http://127.0.0.1:5500/Dangnhap/hoso/hoso.html">Hồ sơ</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/caidat/caidat1.html">Cài đặt</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/Tongquan/dangnhap/Dangnhap.html">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-buttons">
+                <button data-url="http://127.0.0.1:5500/Dangnhap/trangchu/congviec.html"><i class="fas fa-tasks"></i> Công Việc</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/duan/duan.html"><i class="fas fa-cog"></i> DS Dự án</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/nhiemvu/canhan.html"><i class="fas fa-user"></i> Cá Nhân</button>  
+                <button data-url="https://example.com/cong-viec"><i class="fas fa-flag"></i> Báo cáo</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/lich/lich.html"><i class="fas fa-calendar-alt"></i> Lịch</button>
+            </div>
+            <hr>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/trangchu/kehoach.html"> Kế hoạch</a></li>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/s%E1%BB%B1%20ki%E1%BB%87n/sukien.html"> Sự kiện</a></li>
+                <li><a href="#">Khác</a></li>
+            </ul>
+            <hr>
+
+        </div>
+        
+        <div class="content">
+            <div id="calendar-container">
+                <div id="calendar-header">
+                    <button id="prev-month">Trước</button>
+                    <h1 id="current-month-year"></h1>
+                    <button id="next-month">Tiếp</button>
+                </div>
+                <div id="calendar"></div>
+            </div>
+    
+            <template id="day-template">
+                <div class="day">
+                    <div class="day-header"></div>
+                    <ul class="tasks"></ul>
+                </div>
+            </template>
+        </div>
+    </div>
+    <script src="lich.js"></script>
+    <script>
+        const calendarContainer = document.getElementById('calendar-container');
+        const calendarHeader = document.getElementById('calendar-header');
+        const calendar = document.getElementById('calendar');
+        const dayTemplate = document.getElementById('day-template').content;
+        const currentMonthYear = document.getElementById('current-month-year');
+        const prevMonthButton = document.getElementById('prev-month');
+        const nextMonthButton = document.getElementById('next-month');
+
+        const tasks = {
+            '2024-07-01': ['Công việc 1'],
+            '2024-07-05': ['Công việc 3'],
+            '2024-07-12': ['Công việc 4'],
+            '2024-07-15': ['Công việc 6'],
+            '2024-07-20': ['Công việc 7'],
+            '2024-07-25': ['Công việc 9'],
+            '2024-08-01': ['Công việc 10'],
+            '2024-07-02': ['Công việc 11'],
+            '2024-07-08': ['Công việc 12'],
+            '2024-07-18': ['Công việc 13'],
+            '2024-07-22': ['Công việc 14'],
+            '2024-07-29': ['Công việc 15']
+        };
+
+        let currentYear = new Date().getFullYear();
+        let currentMonth = new Date().getMonth();
+
+        function getDaysInMonth(year, month) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+
+        function getStartDay(year, month) {
+            return new Date(year, month, 1).getDay();
+        }
+
+        function renderCalendar(year, month) {
+            calendar.innerHTML = '';
+            currentMonthYear.textContent = new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' });
+
+            const daysInMonth = getDaysInMonth(year, month);
+            const startDay = getStartDay(year, month);
+
+            for (let i = 0; i < startDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.classList.add('day');
+                calendar.appendChild(emptyDay);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = dayTemplate.cloneNode(true);
+                const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                dayElement.querySelector('.day-header').textContent = `${day}`;
+                const taskList = dayElement.querySelector('.tasks');
+                
+                if (tasks[dateKey]) {
+                    tasks[dateKey].forEach(task => {
+                        const taskItem = document.createElement('li');
+                        taskItem.classList.add('task');
+                        taskItem.textContent = task;
+                        taskList.appendChild(taskItem);
+                    });
+                }
+
+                calendar.appendChild(dayElement);
+            }
+        }
+
+        prevMonthButton.addEventListener('click', () => {
+            if (currentMonth === 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else {
+                currentMonth--;
+            }
+            renderCalendar(currentYear, currentMonth);
+        });
+
+        nextMonthButton.addEventListener('click', () => {
+            if (currentMonth === 11) {
+                currentMonth = 0;
+                currentYear++;
+            } else {
+                currentMonth++;
+            }
+            renderCalendar(currentYear, currentMonth);
+        });
+
+        renderCalendar(currentYear, currentMonth);
+    </script>
+</body>
+</html>

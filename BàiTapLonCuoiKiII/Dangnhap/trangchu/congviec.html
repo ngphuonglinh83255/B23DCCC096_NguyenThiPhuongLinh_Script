@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Việc</title>
+    <link rel="stylesheet" href="congviec.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <input type="text" id="search-header" placeholder="Search...">
+        <div class="account">
+            <img id="avatar" src="https://i.pinimg.com/736x/63/50/38/635038fc44faa6546510702e43f825c3.jpg" alt="Avatar">
+            <span id="username">Leen</span>
+            <div class="account-options" id="account-options">
+                <a href="http://127.0.0.1:5500/Dangnhap/hoso/hoso.html">Hồ sơ</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/caidat/caidat1.html">Cài đặt</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/Tongquan/dangnhap/Dangnhap.html">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-buttons">
+                <button data-url="http://127.0.0.1:5500/Dangnhap/trangchu/congviec.html"><i class="fas fa-tasks" ></i> Công Việc</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/duan/duan.html"><i class="fas fa-cog"></i> DS Dự án</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/nhiemvu/canhan.html"><i class="fas fa-user"></i> Cá Nhân</button>  
+                <button data-url="https://example.com/cong-viec"><i class="fas fa-flag"></i> Báo cáo</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/lich/lich.html"><i class="fas fa-calendar-alt"></i> Lịch</button>
+            </div>
+            <hr>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/trangchu/kehoach.html">Kế hoạch</a></li>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/s%E1%BB%B1%20ki%E1%BB%87n/sukien.html">Sự kiện</a></li>
+                <li><a href="#">Khác</a></li>
+            </ul>
+            <hr>
+        </div>
+        
+        <div class="content">
+            <form id="taskForm">
+                <label for="startDate">Từ ngày:</label>
+                <input type="date" id="startDate" name="startDate">
+            
+                <label for="endDate">Đến ngày:</label>
+                <input type="date" id="endDate" name="endDate">
+            
+                <label for="category">Phân loại:</label>
+                <select id="category" name="category">
+                    <option value="">-- Chọn --</option>
+                    <option value="work">Công việc</option>
+                    <option value="personal">Cá nhân</option>
+                    <option value="others">Khác</option>
+                </select>
+            
+                <label for="taskName">Tên công việc:</label>
+                <input type="text" id="taskNameInput" name="taskName">
+            
+                <button type="button" id="updateButton">Cập nhật</button>
+            </form>
+            
+            <div class="content1">
+                <div class="charts-container">
+                    <div>
+                        <h3>Biểu đồ công việc trong ngày</h3>
+                        <canvas id="chartDay"></canvas>
+                        <div id="legendDay" class="legend-container"></div>
+                    </div>
+                    <div>
+                        <h3>Biểu đồ công việc trong tháng</h3>
+                        <canvas id="chartMonth"></canvas>
+                    </div>
+                    <div>
+                        <h3>Phân chia theo dự án</h3>
+                        <ul id="taskList">
+                            <li>Đang thực hiện<hr></li>
+                            <li>Gia hạn thêm<hr></li>
+                            <li>Chưa hoàn thành<hr></li>
+                            <li>Đã xong<hr></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content2">
+                <div class="container1">
+                    <h2>Thêm công việc</h2>
+                    <button id="toggleAddTaskBtn">+</button>
+                    <div class="add-task" id="addTask">
+                        <form id="addTaskForm">
+                            <div class="form-group">
+                                <label for="taskName">Tên công việc:</label>
+                                <input type="text" id="taskName" name="taskName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskDescription">Mô tả công việc:</label>
+                                <textarea id="taskDescription" name="taskDescription" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskPriority">Độ ưu tiên:</label>
+                                <select id="taskPriority" name="taskPriority" required>
+                                    <option value="low">Thấp</option>
+                                    <option value="medium">Trung bình</option>
+                                    <option value="high">Cao</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dueDate">Ngày hết hạn:</label>
+                                <input type="date" id="dueDate" name="dueDate" required>
+                            </div>
+                            <div class="form-group buttons">
+                                <button type="button" id="addTaskBtn">Thêm công việc</button>
+                                <button type="button" id="updateTaskBtn" style="display: none;">Cập nhật công việc</button>
+                                <button type="button" id="clearFormBtn">Xóa form</button>
+                            </div>
+                        </form>
+                    </div>
+                
+                    <div class="task-list" id="taskList">
+                        <div class="task">
+                            <div class="task-details">
+                                <div class="task-info">
+                                    <strong>Công việc 1</strong>
+                                </div>
+                                <div class="task-buttons">
+                                    <button class="edit">Sửa</button>
+                                    <button class="delete">Xóa</button>
+                                </div>
+                            </div>
+                            <div class="task-meta">
+                                <div>Bắt đầu: 2024-06-16</div>
+                                <div>Kết thúc: 2024-06-20</div>
+                                <div class="importance high">Quan trọng: Cao</div>
+                            </div>
+                        </div>
+                        <div class="task">
+                            <div class="task-details">
+                                <div class="task-info">
+                                    <strong>Công việc 2</strong>
+                                </div>
+                                <div class="task-buttons">
+                                    <button class="edit">Sửa</button>
+                                    <button class="delete">Xóa</button>
+                                </div>
+                            </div>
+                            <div class="task-meta">
+                                <div>Bắt đầu: 2024-06-17</div>
+                                <div>Kết thúc: 2024-06-22</div>
+                                <div class="importance medium">Quan trọng: Trung bình</div>
+                            </div>
+                        </div>
+                        <div class="task">
+                            <div class="task-details">
+                                <div class="task-info">
+                                    <strong>Công việc 3</strong>
+                                </div>
+                                <div class="task-buttons">
+                                    <button class="edit">Sửa</button>
+                                    <button class="delete">Xóa</button>
+                                </div>
+                            </div>
+                            <div class="task-meta">
+                                <div>Bắt đầu: 2024-06-18</div>
+                                <div>Kết thúc: 2024-06-25</div>
+                                <div class="importance low">Quan trọng: Thấp</div>
+                            </div>
+                        </div>
+                        <div class="task">
+                            <div class="task-details">
+                                <div class="task-info">
+                                    <strong>Công việc 4</strong>
+                                </div>
+                                <div class="task-buttons">
+                                    <button class="edit">Sửa</button>
+                                    <button class="delete">Xóa</button>
+                                </div>
+                            </div>
+                            <div class="task-meta">
+                                <div>Bắt đầu: 2024-06-19</div>
+                                <div>Kết thúc: 2024-06-26</div>
+                                <div class="importance high">Quan trọng: Cao</div>
+                            </div>
+                        </div>
+                        <div class="task">
+                            <div class="task-details">
+                                <div class="task-info">
+                                    <strong>Công việc 5</strong>
+                                </div>
+                                <div class="task-buttons">
+                                    <button class="edit">Sửa</button>
+                                    <button class="delete">Xóa</button>
+                                </div>
+                            </div>
+                            <div class="task-meta">
+                                <div>Bắt đầu: 2024-06-20</div>
+                                <div>Kết thúc: 2024-06-27</div>
+                                <div class="importance medium">Quan trọng: Trung bình</div>
+                            </div>
+                        </div>
+                        <div class="task">
+                            <div class="task-details">
+                                <div class="task-info">
+                                    <strong>Công việc 6</strong>
+                                </div>
+                                <div class="task-buttons">
+                                    <button class="edit">Sửa</button>
+                                    <button class="delete">Xóa</button>
+                                </div>
+                            </div>
+                            <div class="task-meta">
+                                <div>Bắt đầu: 2024-06-21</div>
+                                <div>Kết thúc: 2024-06-28</div>
+                                <div class="importance low">Quan trọng: Thấp</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="congviec.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Biểu đồ công việc trong ngày
+    const dataDay = {
+        labels: ['Ngày 1', 'Ngày 2', 'Ngày 3', 'Ngày 4', 'Ngày 5'],
+        datasets: [{
+            label: 'Công việc hoàn thành',
+            data: [8, 10, 6, 12, 9],
+            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }, {
+            label: 'Công việc chưa hoàn thành',
+            data: [2, 0, 4, 0, 1],
+            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        }, {
+            label: 'Công việc quá hạn',
+            data: [0, 1, 0, 2, 0],
+            backgroundColor: 'rgba(255, 205, 86, 0.6)',
+            borderColor: 'rgba(255, 205, 86, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    const configDay = {
+        type: 'bar',
+        data: dataDay,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Số công việc'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: ''
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem) {
+                        return tooltipItem.dataset.label + ': ' + tooltipItem.raw.toFixed(0);
+                    }
+                }
+            }
+        }
+    };
+
+    // Khởi tạo biểu đồ công việc trong ngày
+    var chartDay = new Chart(
+        document.getElementById('chartDay'),
+        configDay
+    );
+
+    // Tạo chú thích cho biểu đồ công việc trong ngày
+    const legendDay = document.getElementById('legendDay');
+    dataDay.datasets.forEach((dataset, index) => {
+        const legendItem = document.createElement('div');
+        legendItem.classList.add('legend-item');
+
+        const colorBox = document.createElement('span');
+        colorBox.style.backgroundColor = dataset.borderColor;
+        legendItem.appendChild(colorBox);
+
+        const labelText = document.createElement('span');
+        labelText.classList.add('label-text');
+        labelText.textContent = dataset.label;
+        legendItem.appendChild(labelText);
+
+        legendDay.appendChild(legendItem);
+    });
+
+    // Biểu đồ công việc trong tháng
+    const dataMonth = {
+        labels: ['Tuần 1', 'Tuần 2', 'Tuần 3', 'Tuần 4'],
+        datasets: [{
+            label: 'Công việc hoàn thành',
+            data: [45, 55, 60, 70],
+            fill: false,
+            borderColor: 'rgba(255, 99, 132, 1)',
+            tension: 0.1
+        }]
+    };
+
+    const configMonth = {
+        type: 'line',
+        data: dataMonth,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Số công việc'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: ''
+                    }
+                }
+            }
+        }
+    };
+
+    // Khởi tạo biểu đồ công việc trong tháng
+    var chartMonth = new Chart(
+        document.getElementById('chartMonth'),
+        configMonth
+    );
+</script>
+</body>
+</html>

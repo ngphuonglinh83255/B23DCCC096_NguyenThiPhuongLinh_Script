@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  header {
+    background-color: #202933;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    padding: 10px 0;
+  }
+  nav .menu {
+    display: flex;
+    justify-content: center;
+  }
+  nav .menu a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  nav .menu a:hover {
+    background: #575757;
+  }
+  nav .auth {
+    display: flex;
+  }
+  nav .auth a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid white;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+  nav .auth a:hover {
+    background: #575757;
+  }
+  .container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+  }
+  .showcase {
+    background: url('https://i.pinimg.com/564x/b2/a9/71/b2a971a9006d38ea34f17ca9d6e1a76e.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .showcase:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  .showcase h1 {
+    font-size: 50px;
+  }
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  .feature {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    flex: 1 1 30%;
+    margin: 10px;
+    text-align: center;
+  }
+  .about {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .about img {
+    float: left;
+    margin-right: 20px;
+    width: 300px;
+  }
+  .about:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .team {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  .team-member {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+  }
+  .team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  footer {
+    background: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  

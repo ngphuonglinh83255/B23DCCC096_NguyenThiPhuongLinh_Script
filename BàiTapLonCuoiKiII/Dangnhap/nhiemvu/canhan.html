@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cá Nhân</title>
+    <link rel="stylesheet" href="canhan.css">
+    <!-- Thêm liên kết tới Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <input type="text" id="search-header" placeholder="Search...">
+        <div class="account">
+            <img id="avatar" src="https://i.pinimg.com/736x/63/50/38/635038fc44faa6546510702e43f825c3.jpg" alt="Avatar">
+            <span id="username">Leen</span>
+            <div class="account-options" id="account-options">
+                <a href="http://127.0.0.1:5500/Dangnhap/hoso/hoso.html">Hồ sơ</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/caidat/caidat1.html">Cài đặt</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/Tongquan/dangnhap/Dangnhap.html">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-buttons">
+                <button data-url="http://127.0.0.1:5500/Dangnhap/trangchu/congviec.html"><i class="fas fa-tasks"></i> Công Việc</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/duan/duan.html"><i class="fas fa-cog"></i> DS Dự án</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/nhiemvu/canhan.html"><i class="fas fa-user"></i> Cá Nhân</button>  
+                <button data-url="https://example.com/cong-viec"><i class="fas fa-flag"></i> Báo cáo</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/lich/lich.html"><i class="fas fa-calendar-alt"></i> Lịch</button>
+            </div>
+            <hr>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/trangchu/kehoach.html"> Kế hoạch</a></li>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/s%E1%BB%B1%20ki%E1%BB%87n/sukien.html"> Sự kiện</a></li>
+                <li><a href="#">Khác</a></li>
+            </ul>
+            <hr>
+
+        </div>
+        
+        <div class="content">
+          <div class="container1">
+            <div class="section" id="recent">
+                <p>Gần đây</p>
+                <img src="https://i.pinimg.com/564x/4f/1c/81/4f1c812ef6e6a8308d2d9e2625cb3980.jpg" alt="Biểu tượng Gần đây">
+                
+                <div class="message">
+                    Tài liệu sẽ được hiển thị tại đây.
+                </div>
+            </div>
+            <div class="section" id="favorite">
+                <p>Yêu thích</p>
+                <img src="https://i.pinimg.com/564x/5e/07/82/5e0782e673bfedd2c2c4af979ac9f939.jpg" alt="Biểu tượng Yêu thích">
+                
+                <div class="message">
+                    Tài liệu sẽ được hiển thị tại đây.
+                </div>
+            </div>
+            <div class="section" id="created-by-me">
+                <p>Được tạo bởi tôi</p>
+                <img src="https://i.pinimg.com/564x/61/61/9f/61619fe620ba26088f6631fbd0743153.jpg" alt="Biểu tượng Được tạo bởi tôi">
+               
+                <div class="message">
+                    Tài liệu sẽ được hiển thị tại đây.
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+          <button class="btn" onclick="showContent('all')">Tất cả</button>
+          <button class="btn" onclick="showContent('myDocuments')">Tài liệu của tôi</button>
+          <button class="btn" onclick="showContent('shared')">Đã chia sẻ</button>
+          <button class="btn" onclick="showContent('private')">Riêng tư</button>
+          <button class="btn" onclick="showContent('workspace')">Không gian làm việc</button>
+          <button class="btn" onclick="showContent('assigned')">Giao</button>
+          <button class="btn" onclick="showContent('archived')">Lưu trữ</button>
+      </div>
+      <hr>
+      
+      <section id="contentAll" class="content-section"><table>
+        <thead>
+            <tr>
+                <th>Tên công việc</th>
+                <th>Ngày cập nhật</th>
+                <th>Vị trí</th>
+                <th>Ngày xem</th>
+                <th>Ngày chia sẻ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Viết báo cáo</td>
+                <td>2024-06-20</td>
+                <td>Trang chủ</td>
+                <td>2024-06-21</td>
+                <td>2024-06-22</td>
+            </tr>
+            <tr>
+                <td>Kiểm tra mã nguồn</td>
+                <td>2024-06-22</td>
+                <td>Hệ thống</td>
+                <td>2024-06-23</td>
+                <td>2024-06-24</td>
+            </tr>
+            <tr>
+              <td>Lập kế hoạch dự án</td>
+              <td>2024-06-26</td>
+              <td>Quản lý dự án</td>
+              <td>2024-06-27</td>
+              <td>2024-06-28</td>
+          </tr>
+          <tr>
+            <td>Triển khai hệ thống mới</td>
+            <td>2024-07-01</td>
+            <td>Phát triển</td>
+            <td>2024-07-02</td>
+            <td>2024-07-03</td>
+        </tr>
+            <tr>
+                <td>Phân tích yêu cầu</td>
+                <td>2024-06-24</td>
+                <td>Bảo mật</td>
+                <td>2024-06-25</td>
+                <td>2024-06-26</td>
+            </tr>
+            <tr>
+              <td>Phân tích</td>
+              <td>2024-06-24</td>
+              <td>Bảo mật</td>
+              <td>2024-06-25</td>
+              <td>2024-06-26</td>
+          </tr>
+          <tr>
+            <td>Phân tích người dùng</td>
+            <td>2024-06-24</td>
+            <td>Bảo mật</td>
+            <td>2024-06-25</td>
+            <td>2024-06-26</td>
+        </tr>
+        
+        </tbody>
+    </table>
+    </section>
+      <section id="contentMyDocuments" class="content-section"><table>
+        <thead>
+            <tr>
+                <th>Tên công việc</th>
+                <th>Ngày cập nhật</th>
+                <th>Vị trí</th>
+                <th>Ngày xem</th>
+                <th>Ngày chia sẻ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Viết báo cáo</td>
+                <td>2024-06-20</td>
+                <td>Trang chủ</td>
+                <td>2024-06-21</td>
+                <td>2024-06-22</td>
+            </tr>
+            <tr>
+                <td>Kiểm tra mã nguồn</td>
+                <td>2024-06-22</td>
+                <td>Hệ thống</td>
+                <td>2024-06-23</td>
+                <td>2024-06-24</td>
+            </tr>
+            <tr>
+                <td>Phân tích yêu cầu</td>
+                <td>2024-06-24</td>
+                <td>Bảo mật</td>
+                <td>2024-06-25</td>
+                <td>2024-06-26</td>
+            </tr>
+            <!-- Thêm công việc mới -->
+            <tr>
+              <td>Lập kế hoạch dự án</td>
+              <td>2024-06-26</td>
+              <td>Quản lý dự án</td>
+              <td>2024-06-27</td>
+              <td>2024-06-28</td>
+          </tr>
+        </tbody>
+    </table></section>
+      <section id="contentShared" class="content-section"><div class="document">
+        <div class="document-info">
+            <div>
+                <span>Tài liệu "Dự án bảo lưu"</span>
+                <span class="shared-by">Người chia sẻ: John Doe</span>
+            </div>
+            <div class="download-info">
+                <span class="date-shared">Ngày chia sẻ: 2024-06-25</span>
+                <a href="path/to/document_a.pdf" class="download-link">
+                    <i class="fas fa-download"></i> 
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tài liệu B -->
+    <div class="document">
+        <div class="document-info">
+            <div>
+                <span>Tài liệu "Phân tích thị trường"</span>
+                <span class="shared-by">Người chia sẻ: Jane Smith</span>
+            </div>
+            <div class="download-info">
+                <span class="date-shared">Ngày chia sẻ: 2024-06-26</span>
+                <a href="path/to/document_b.pdf" class="download-link">
+                    <i class="fas fa-download"></i> 
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tài liệu C -->
+    <div class="document">
+        <div class="document-info">
+            <div>
+                <span>Tài liệu "Phân tích dự án"</span>
+                <span class="shared-by">Người chia sẻ: Michael Brown</span>
+            </div>
+            <div class="download-info">
+                <span class="date-shared">Ngày chia sẻ: 2024-06-27</span>
+                <a href="path/to/document_c.pdf" class="download-link">
+                    <i class="fas fa-download"></i> 
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tài liệu D -->
+    <div class="document">
+        <div class="document-info">
+            <div>
+                <span>Tài liệu "Báo cáo dựa án"</span>
+                <span class="shared-by">Người chia sẻ: Emily Johnson</span>
+            </div>
+            <div class="download-info">
+                <span class="date-shared">Ngày chia sẻ: 2024-06-28</span>
+                <a href="path/to/document_d.pdf" class="download-link">
+                    <i class="fas fa-download"></i> 
+                </a>
+            </div>
+        </div>
+    </div></section>
+      <section id="contentPrivate" class="content-section"><div class="document">
+        <div class="document-info">
+            <div>
+                <span class="document-title">Tài liệu "Tài khoản người dùng"</span>
+                <span class="owner">Người sở hữu: John Doe</span>
+            </div>
+            <div class="options">
+                <span class="option">Ngày sở hữu: 2024-06-25</span>
+                <span class="option">Quyền truy cập: Private</span>
+            </div>
+        </div>
+        <a href="path/to/document_a.pdf" class="download-link">
+            <i class="fas fa-download"></i> 
+        </a>
+    </div>
+    
+    <!-- Tài liệu B -->
+    <div class="document">
+        <div class="document-info">
+            <div>
+                <span class="document-title">Tài liệu "Thông tin người sở hữu"</span>
+                <span class="owner">Người sở hữu: Jane Smith</span>
+            </div>
+            <div class="options">
+                <span class="option">Ngày sở hữu: 2024-06-26</span>
+                <span class="option">Quyền truy cập: Private</span>
+            </div>
+        </div>
+        <a href="path/to/document_b.pdf" class="download-link">
+            <i class="fas fa-download"></i> 
+        </a>
+    </div>
+    
+    <!-- Tài liệu C -->
+    <div class="document">
+        <div class="document-info">
+            <div>
+                <span class="document-title">Tài liệu "Bảo mật"</span>
+                <span class="owner">Người sở hữu: Michael Brown</span>
+            </div>
+            <div class="options">
+                <span class="option">Ngày sở hữu: 2024-06-27</span>
+                <span class="option">Quyền truy cập: Private</span>
+            </div>
+        </div>
+        <a href="path/to/document_c.pdf" class="download-link">
+            <i class="fas fa-download"></i> 
+        </a>
+    </div>
+    
+    <!-- Tài liệu D -->
+    <div class="document">
+        <div class="document-info">
+            <div>
+                <span class="document-title">Tài liệu "Thông tin mật"</span>
+                <span class="owner">Người sở hữu: Emily Johnson</span>
+            </div>
+            <div class="options">
+                <span class="option">Ngày sở hữu: 2024-06-28</span>
+                <span class="option">Quyền truy cập: Private</span>
+            </div>
+        </div>
+        <a href="path/to/document_d.pdf" class="download-link">
+            <i class="fas fa-download"></i> 
+        </a>
+    </div>
+    </section>
+      <section id="contentWorkspace" class="content-section"><div class="position">
+        <div class="position-info">
+            <div>
+                <span class="position-title">Vị trí A</span>
+                <div class="position-details">
+                    <div>Địa điểm: Hà Nội</div>
+                    <div>Mô tả: Công việc A tại Hà Nội với yêu cầu kỹ năng XYZ...</div>
+                </div>
+            </div>
+            <div class="options">
+                <a href="#" class="view-link">
+                    <i class="fas fa-info-circle"></i> Xem chi tiết
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Vị trí B -->
+    <div class="position">
+        <div class="position-info">
+            <div>
+                <span class="position-title">Vị trí B</span>
+                <div class="position-details">
+                    <div>Địa điểm: TP. Hồ Chí Minh</div>
+                    <div>Mô tả: Công việc B tại TP. Hồ Chí Minh với yêu cầu kỹ năng ABC...</div>
+                </div>
+            </div>
+            <div class="options">
+                <a href="#" class="view-link">
+                    <i class="fas fa-info-circle"></i> Xem chi tiết
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Vị trí C -->
+    <div class="position">
+        <div class="position-info">
+            <div>
+                <span class="position-title">Vị trí C</span>
+                <div class="position-details">
+                    <div>Địa điểm: Đà Nẵng</div>
+                    <div>Mô tả: Công việc C tại Đà Nẵng với yêu cầu kỹ năng 123...</div>
+                </div>
+            </div>
+            <div class="options">
+                <a href="#" class="view-link">
+                    <i class="fas fa-info-circle"></i> Xem chi tiết
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Vị trí D -->
+    <div class="position">
+        <div class="position-info">
+            <div>
+                <span class="position-title">Vị trí D</span>
+                <div class="position-details">
+                    <div>Địa điểm: Hải Phòng</div>
+                    <div>Mô tả: Công việc D tại Hải Phòng với yêu cầu kỹ năng DEF...</div>
+                </div>
+            </div>
+            <div class="options">
+                <a href="#" class="view-link">
+                    <i class="fas fa-info-circle"></i> Xem chi tiết
+                </a>
+            </div>
+        </div>
+    </div></section>
+      <section id="contentAssigned" class="content-section"><div class="task">
+        <div class="task-info">
+            <div>
+                <span class="task-title">Công việc A</span>
+                <div class="task-details">
+                    <div>Ngày cập nhật: 2024-06-25</div>
+                    <div>Vị trí: Hà Nội</div>
+                    <div>Ngày xem: 2024-06-26</div>
+                </div>
+            </div>
+            <div class="options">
+                <a href="#" class="share-link">
+                    <i class="fas fa-share-alt"></i> Chia sẻ
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Công việc B -->
+    <div class="task">
+        <div class="task-info">
+            <div>
+                <span class="task-title">Công việc B</span>
+                <div class="task-details">
+                    <div>Ngày cập nhật: 2024-06-24</div>
+                    <div>Vị trí: TP. Hồ Chí Minh</div>
+                    <div>Ngày xem: 2024-06-25</div>
+                </div>
+            </div>
+            <div class="options">
+                <a href="#" class="share-link">
+                    <i class="fas fa-share-alt"></i> Chia sẻ
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="task">
+      <div class="task-info">
+          <div>
+              <span class="task-title">Công việc C</span>
+              <div class="task-details">
+                  <div>Ngày cập nhật: 2024-06-23</div>
+                  <div>Vị trí: Đà Nẵng</div>
+                  <div>Ngày xem: 2024-06-24</div>
+              </div>
+          </div>
+          <div class="options">
+              <a href="#" class="share-link">
+                  <i class="fas fa-share-alt"></i> Chia sẻ
+              </a>
+          </div>
+      </div>
+  </div>
+  
+    </section>
+      <section id="contentArchived" class="content-section"><div class="archived-task">
+        <div class="archived-task-info">
+            <div>
+                <span class="archived-task-title">Công việc A</span>
+                <div class="archived-task-details">
+                    <div>Ngày cập nhật: 2024-06-01</div>
+                    <div>Vị trí: Hà Nội</div>
+                    <div>Ngày xem: 2024-06-02</div>
+                    <div>Ngày lưu trữ: 2024-06-15</div>
+                </div>
+            </div>
+            <div class="archived-task-options">
+                <a href="#" class="share-link">
+                    <i class="fas fa-share-alt"></i> Chia sẻ
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Công việc B -->
+    <div class="archived-task">
+        <div class="archived-task-info">
+            <div>
+                <span class="archived-task-title">Công việc B</span>
+                <div class="archived-task-details">
+                    <div>Ngày cập nhật: 2024-05-15</div>
+                    <div>Vị trí: TP. Hồ Chí Minh</div>
+                    <div>Ngày xem: 2024-05-16</div>
+                    <div>Ngày lưu trữ: 2024-05-30</div>
+                </div>
+            </div>
+            <div class="archived-task-options">
+                <a href="#" class="share-link">
+                    <i class="fas fa-share-alt"></i> Chia sẻ
+                </a>
+            </div>
+        </div>
+    </div></section>
+            <!-- Nội dung của trang nằm ở đây -->
+        </div>
+    </div>
+    <script src="canhan.js"></script>
+    <script>
+      function showContent(contentId) {
+  // Ẩn tất cả các nội dung
+  const contents = document.querySelectorAll('.content-section');
+  contents.forEach(content => {
+      content.style.display = 'none';
+  });
+
+  // Hiển thị nội dung được chọn
+  const contentToShow = document.getElementById(`content${contentId.charAt(0).toUpperCase() + contentId.slice(1)}`);
+  contentToShow.style.display = 'block';
+}
+
+  </script>
+</body>
+</html>
