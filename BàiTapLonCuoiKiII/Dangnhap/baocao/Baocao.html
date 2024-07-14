@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo</title>
+    <link rel="stylesheet" href="Baocao.css">
+    <!-- Thêm liên kết tới Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <div class="account">
+            <img id="avatar" src="https://i.pinimg.com/736x/63/50/38/635038fc44faa6546510702e43f825c3.jpg" alt="Avatar">
+            <span id="username">Leen</span>
+            <div class="account-options" id="account-options">
+                <a href="http://127.0.0.1:5500/Dangnhap/hoso/hoso.html">Hồ sơ</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/caidat/caidat1.html">Cài đặt</a>
+                <a href="http://127.0.0.1:5500/Dangnhap/Tongquan/dangnhap/Dangnhap.html">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="sidebar">
+            <div class="sidebar-buttons">
+                <button data-url="http://127.0.0.1:5500/Dangnhap/trangchu/congviec.html"><i class="fas fa-tasks"></i> Công Việc</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/duan/duan.html"><i class="fas fa-cog"></i> DS Dự án</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/nhiemvu/canhan.html"><i class="fas fa-user"></i> Cá Nhân</button>  
+                <button data-url="http://127.0.0.1:5500/Dangnhap/baocao/Baocao.html"><i class="fas fa-flag"></i> Báo cáo</button>
+                <button data-url="http://127.0.0.1:5500/Dangnhap/lich/lich.html"><i class="fas fa-calendar-alt"></i> Lịch</button>
+            </div>
+            <hr>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/trangchu/kehoach.html"> Kế hoạch</a></li>
+                <li><a href="http://127.0.0.1:5500/Dangnhap/s%E1%BB%B1%20ki%E1%BB%87n/sukien.html"> Sự kiện</a></li>
+                <li><a href="#">Khác</a></li>
+            </ul>
+            <hr>
+
+        </div>
+        <div class="container">
+            <div class="filters">
+                <header2>
+                    <h1>Báo cáo | Thống kê công việc theo thời gian</h1>
+                </header2>
+                <div class="box2">
+                    <select id="statusFilter">
+                        <option value="all">Tất cả trạng thái công việc</option>
+                        <!-- Other options -->
+                    </select>
+                    <select id="userFilter">
+                        <option value="all">Người thực hiện</option>
+                        <!-- Other options -->
+                    </select>
+                    <select id="groupFilter">
+                        <option value="all">Nhóm công việc</option>
+                        <!-- Other options -->
+                    </select>
+                    <select id="projectFilter">
+                        <option value="all">Dự án</option>
+                        <!-- Other options -->
+                    </select>
+                </div>
+            </div>
+            
+            <div class="box">
+                <div class="cl1">
+                    <div class="charts">
+                        <div class="tasks-by-days">
+                            <h2>Tỷ lệ hoàn thành công việc đúng hạn</h2>
+                            <canvas id="tasksByDaysChart"></canvas>
+                        </div>
+                        <div class="task-status">
+                            <canvas id="taskStatusChart"></canvas>
+                            <div class="box3">
+                                <div class="status">
+                                    <span> Đã thực hiện</span>
+                                    <div class="status-value">
+                                        <div class="status-bar" style="background-color: #cde6f7; width: 15px; height: 15px;"></div>
+                                    </div>
+                                </div>
+                                <div class="status">
+                                    <span>Đang thực hiện</span>
+                                    <div class="status-value">
+                                        <div class="status-bar" style="background-color: #1abc9c; width: 15px; height: 15px;"></div>                         
+                                    </div>  
+                                </div>
+                                <div class="status">
+                                    <span>Chưa thực hiện</span>
+                                    <div class="status-value">
+                                        <div class="status-bar" style="background-color: #375dc4; width: 15px; height: 15px;"></div>
+                                    </div>
+                                </div>
+                                <div class="status">
+                                    <span> Bị trễ deadline</span>
+                                    <div class="status-value">
+                                        <div class="status-bar" style="background-color: #5b92db; width: 15px; height: 15px;"></div>                                 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="task-table">
+                    <div class="search-container">
+                        <input type="text" id="searchInput2" placeholder="Tìm kiếm...">
+                        <button type="button" onclick="searchFunction()">Tìm</button>
+                    </div>
+                    <table id="taskTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script src="Baocao.js"></script>
+</body>
+</html>
