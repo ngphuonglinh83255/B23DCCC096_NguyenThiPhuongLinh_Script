@@ -1,0 +1,62 @@
+/* Đặt font chung và căn giữa máy tính */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 310px;
+}
+
+#display {
+    width: 88%;
+    height: 45px;
+    background-color: #333;
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px;
+    text-align: right;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    margin-left: 6px; 
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    background-color: #f1f1f1;
+    border: none;
+    margin: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 8px; 
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+button:active {
+    background-color: #cccccc;
+}
+
+button.zero {
+    width: 130px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
