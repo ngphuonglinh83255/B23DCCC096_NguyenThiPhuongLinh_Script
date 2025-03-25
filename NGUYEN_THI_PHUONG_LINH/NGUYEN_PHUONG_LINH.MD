@@ -35,81 +35,49 @@ Tôi chọn **Ubuntu** làm bản phân phối Linux để sử dụng. Lý do c
 - **ARP (Address Resolution Protocol)**: Giao thức chuyển đổi địa chỉ IP sang địa chỉ MAC.
 
 ### 2.3. Các công cụ mạng đã thực hành
-- **ping**: Kiểm tra kết nối giữa hai thiết bị.
+#### 1. **ping**: Kiểm tra kết nối giữa hai thiết bị.
   ```sh
   ping google.com
   ```
-- **ifconfig/ip a**: Kiểm tra thông tin mạng của máy.
+  - Mở Terminal hoặc Command Prompt.
+  - Chạy lệnh trên để kiểm tra kết nối đến Google.
+  - Nếu có phản hồi, kết nối mạng đang hoạt động tốt.
+
+#### 2. **ifconfig/ip a**: Kiểm tra thông tin mạng của máy.
   ```sh
   ip a
   ```
-- **traceroute**: Kiểm tra đường đi của gói tin đến máy đích.
+  - Mở Terminal.
+  - Chạy lệnh để xem địa chỉ IP và thông tin mạng.
+
+#### 3. **traceroute**: Kiểm tra đường đi của gói tin đến máy đích.
   ```sh
   traceroute google.com
   ```
-- **netstat**: Kiểm tra các kết nối mạng đang hoạt động.
+  - Dùng lệnh này để xem các điểm trung gian mà gói tin đi qua trước khi đến Google.
+
+#### 4. **netstat**: Kiểm tra các kết nối mạng đang hoạt động.
   ```sh
   netstat -tulnp
   ```
-- **nslookup**: Kiểm tra thông tin DNS của một tên miền.
+  - Xem danh sách các cổng đang mở và chương trình sử dụng chúng.
+
+#### 5. **nslookup**: Kiểm tra thông tin DNS của một tên miền.
   ```sh
   nslookup google.com
   ```
-- **curl**: Kiểm tra kết nối HTTP/HTTPS.
+  - Dùng để lấy địa chỉ IP của Google thông qua DNS.
+
+#### 6. **curl**: Kiểm tra kết nối HTTP/HTTPS.
   ```sh
   curl -I https://google.com
   ```
-- **wget**: Tải xuống tệp từ Internet.
+  - Kiểm tra tiêu đề HTTP của trang web Google.
+
+#### 7. **wget**: Tải xuống tệp từ Internet.
   ```sh
   wget https://example.com/file.zip
   ```
+  - Dùng để tải xuống tệp từ một URL.
 
 ---
-
-## 3. Tạo Repository và thực hành các lệnh Git cơ bản
-
-- **Cấu hình Git lần đầu tiên**:
-  ```sh
-  git config --global user.name "Your Name"
-  git config --global user.email "your.email@example.com"
-  ```
-
-- **Khởi tạo Git repository**:
-  ```sh
-  git init
-  ```
-
-- **Clone một repository từ GitHub/GitLab**:
-  ```sh
-  git clone https://github.com/username/repository.git
-  ```
-
-- **Thêm tệp vào Git**:
-  ```sh
-  git add filename
-  ```
-
-- **Commit thay đổi**:
-  ```sh
-  git commit -m "Mô tả thay đổi"
-  ```
-
-- **Đẩy (push) thay đổi lên repository từ xa**:
-  ```sh
-  git push origin main
-  ```
-
-- **Kéo (pull) thay đổi từ repository từ xa**:
-  ```sh
-  git pull origin main
-  ```
-
-- **Xem trạng thái repository**:
-  ```sh
-  git status
-  ```
-
-- **Xem lịch sử commit**:
-  ```sh
-  git log
-  
